@@ -1,26 +1,27 @@
 #include <iostream>
+
 using namespace std;
 
-void collatz(int num, int temp){
-    cout << temp << " ";
-    if(temp != 1){
-        if(temp%2 == 0){
-            temp = temp / 2;
+void collatz(int num){
+    cout << num << " ";
+    if(num !=  1){
+        if(num%2 == 0){
+            num = num / 2;
         } else {
-            temp = temp * 3 + 1;
+            num = num * 3 + 1;
         }
         
-        collatz(num, temp);
+        collatz(num);
     }
 }
 
 int main(){
     
     int num;
-    cout << "Digite um número para verificar a sequência de Collatz: ";
+    cout << "Defina um numero: ";
     cin >> num;
-    collatz(num, num);
     
+    collatz(num);
     
     return 0;
 }
